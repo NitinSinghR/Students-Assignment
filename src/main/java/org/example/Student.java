@@ -17,7 +17,8 @@ class Student {
     public void updateGPA(int update) {
         Logger l=Logger.getLogger("com.api.jar");
         gpa = update;
-        l.info("The Student " + stuName + " GPA has been updated to " + gpa + "\n");
+        String det="The Student " + stuName + " GPA has been updated to " + gpa + "\n";
+        l.info(det);
     }
 
     public String getDetails() {
