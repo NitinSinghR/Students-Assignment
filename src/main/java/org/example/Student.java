@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.*;
+import java.util.logging.Logger;
 
 class Student {
     private String stuName;
@@ -14,8 +15,9 @@ class Student {
     }
 
     public void updateGPA(int update) {
+        Logger l=Logger.getLogger("com.api.jar");
         gpa = update;
-        System.out.println("The Student " + stuName + " GPA has been updated to " + gpa + "\n");
+        l.info("The Student " + stuName + " GPA has been updated to " + gpa + "\n");
     }
 
     public String getDetails() {
@@ -26,30 +28,31 @@ class Student {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Logger l=Logger.getLogger("com.api.jar");
 
-        System.out.println("Enter the Student's Name:");
+        l.info("Enter the Student's Name:");
         String studentName = sc.next();
-        System.out.println("Enter the Studenr's GPA :");
+        l.info("Enter the Studenr's GPA :");
         int gPA = sc.nextInt();
-        System.out.println("Enter the Gradelevel of the student:");
+        l.info("Enter the Gradelevel of the student:");
         char gradelevel = sc.next().charAt(0);
 
 
         Student s1 = new Student(studentName, gPA, gradelevel);
 
-        System.out.println("choose a option");
-        System.out.println("1.Update GPA \n 2.Details \n");
+        l.info("choose a option");
+        l.info("1.Update GPA \n 2.Details \n");
         int ch = sc.nextInt();
 
         switch (ch) {
             case 1: {
-                System.out.println("Enter the Updated GPA:\n");
+                l.info("Enter the Updated GPA:\n");
                 int update = sc.nextInt();
                 s1.updateGPA(update);
                 break;
             }
             case 2: {
-                System.out.println(s1.getDetails());
+                l.info(s1.getDetails());
                 break;
             }
             default: {
