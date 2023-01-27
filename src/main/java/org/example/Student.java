@@ -53,7 +53,7 @@ class Student {
                 break;
             }
             default: {
-                System.out.println("Enter the correct option");
+                break;
             }
         }
         sc.close();
