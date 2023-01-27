@@ -34,7 +34,6 @@ class Student {
         System.out.println("Enter the Gradelevel of the student:");
         char gradelevel = sc.next().charAt(0);
 
-        Boolean loop = true;
 
         Student s1 = new Student(studentName, gPA, gradelevel);
 
@@ -54,7 +53,7 @@ class Student {
                 break;
             }
             default: {
-                loop = false;
+                System.out.println("Enter the correct option");
             }
         }
         sc.close();
