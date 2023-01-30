@@ -45,6 +45,7 @@ class Student {
         l.info("1.Update GPA \n 2.Details \n");
         int ch = sc.nextInt();
 
+    while(true) {
         switch (ch) {
             case 1: {
                 l.info("Enter the Updated GPA:\n");
@@ -57,9 +58,11 @@ class Student {
                 break;
             }
             default: {
-                break;
+                sc.close();
+                throw new IllegalArgumentException("Enter correct option");
             }
         }
-        sc.close();
+
+    }
     }
 }
