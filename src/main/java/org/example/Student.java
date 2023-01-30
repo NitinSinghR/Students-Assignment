@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 class Student {
@@ -29,15 +30,21 @@ class Student {
 
     public static void main(String[] args) {
         int gPA=0;
+        String studentName = null;
+        char gradelevel = 0;
         Scanner sc = new Scanner(System.in);
         Logger l=Logger.getLogger("com.api.jar");
 
-        l.info("Enter the Student's Name:");
-        String studentName = sc.next();
-        l.info("Enter the Student's GPA :");
-        gPA = sc.nextInt();
-        l.info("Enter the Gradelevel of the student:");
-        char gradelevel = sc.next().charAt(0);
+        try{
+         l.info("Enter the Student's Name:");
+         studentName = sc.next();
+         l.info("Enter the Student's GPA :");
+         gPA = sc.nextInt();
+         l.info("Enter the Gradelevel of the student:");
+         gradelevel = sc.next().charAt(0);
+        }catch(InputMismatchException e){
+         l.log(Level.INFO,()->" "+e);
+    }
 
         Student s1 = new Student(studentName, gPA, gradelevel);
 
