@@ -35,11 +35,7 @@ class Student {
         l.info("Enter the Student's Name:");
         String studentName = sc.next();
         l.info("Enter the Student's GPA :");
-        try {
-            gPA = Integer.parseInt(sc.next());
-        }catch(NumberFormatException e){
-        e.printStackTrace();
-        }
+        gPA = sc.nextInt();
         l.info("Enter the Gradelevel of the student:");
         char gradelevel = sc.next().charAt(0);
 
@@ -47,7 +43,7 @@ class Student {
 
         l.info("choose a option");
         l.info("1.Update GPA \n 2.Details \n");
-        int ch = Integer.parseInt(sc.next());
+        int ch = sc.nextInt();
 
         switch (ch) {
             case 1: {
