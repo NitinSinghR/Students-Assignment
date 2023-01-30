@@ -28,22 +28,26 @@ class Student {
     }
 
     public static void main(String[] args) {
+        int gPA=0;
         Scanner sc = new Scanner(System.in);
         Logger l=Logger.getLogger("com.api.jar");
 
         l.info("Enter the Student's Name:");
         String studentName = sc.next();
-        l.info("Enter the Studenr's GPA :");
-        int gPA = sc.nextInt();
+        l.info("Enter the Student's GPA :");
+        try {
+            gPA = Integer.parseInt(sc.next());
+        }catch(NumberFormatException e){
+        e.printStackTrace();
+        }
         l.info("Enter the Gradelevel of the student:");
         char gradelevel = sc.next().charAt(0);
-
 
         Student s1 = new Student(studentName, gPA, gradelevel);
 
         l.info("choose a option");
         l.info("1.Update GPA \n 2.Details \n");
-        int ch = sc.nextInt();
+        int ch = Integer.parseInt(sc.next());
 
         switch (ch) {
             case 1: {
