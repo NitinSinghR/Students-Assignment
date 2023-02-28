@@ -1,13 +1,12 @@
 package org.example;
 
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.logging.*;
 
 class Student {
-    private String stuName;
+    private final String stuName;
     private int gpa;
-    private char grade;
+    private final char grade;
 
     public Student(String stuName, int gpa, char grade) {
         this.stuName = stuName;
@@ -54,22 +53,17 @@ class Student {
 
     while(true) {
         switch (ch) {
-            case 1: {
+            case 1 -> {
                 l.info("Enter the Updated GPA:\n");
                 int update = sc.nextInt();
                 s1.updateGPA(update);
-                break;
             }
-            case 2: {
-                l.info(s1.getDetails());
-                break;
-            }
-            default: {
+            case 2 -> l.info(s1.getDetails());
+            default -> {
                 sc.close();
                 throw new IllegalArgumentException("Enter correct option");
             }
         }
-
     }
     }
 }
